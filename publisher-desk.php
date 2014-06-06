@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: The Publisher Desk
-Plugin URI: http://code.publisherdesk.com/wordpress/plugins/the-publisher-desk
+Plugin URI: http://wordpress.org/plugins/the-publisher-desk/
 Description: Allows for easy integration for any Publisher Desk customer using Wordpress.
 Version: 1.0.2
 Author: The Publisher Desk
