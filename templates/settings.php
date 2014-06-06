@@ -9,21 +9,30 @@
   <?php $contextual = get_option('publisher_desk_contextual'); ?>
 <?php endif; ?>
 <div class="wrap">
-  <?php echo '<h2>' . __('The Publisher Desk - Settings', 'publisher_desk_dom') . '</h2>'; ?>
+  <?php screen_icon(); ?>
+  <?php echo '<h2>' . __('The Publisher Desk', 'publisher_desk_dom') . '</h2>'; ?>
   <form name="publisher_desk_form" method="post" action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
     <input type="hidden" name="publisher_desk_hidden" value="yes">
-    <p><?php _e('Publisher ID: '); ?></p>
-    <p><input type="text" name="publisher_desk_id" value="<?php echo $id; ?>" size="50"></p>
-    <p>
-      <?php if ($contextual == 1): ?>
-        <input type="checkbox" name="publisher_desk_contextual" value="1" checked="checked">
-      <?php else: ?>
-        <input type="checkbox" name="publisher_desk_contextual" value="1">
-      <?php endif; ?>
-      <?php _e('Insert contextual unit after content'); ?>
-    </p>
-    <p class="submit">
-      <input type="submit" name="Submit" value="<?php _e('Update Settings', 'publisher_desk_dom' ) ?>" />
-    </p>
+    <table class="form-table">
+      <tr valign="top">
+        <th scope="row"><label for="wphub_use_api"><?php _e('Publisher ID'); ?></label></th>
+        <td>
+          <input type="text" name="publisher_desk_id" value="<?php echo $id; ?>" size="50">
+          <p class="description">Your account manager will provide this value.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <th scope="row"><label for="wphub_use_api"><?php _e('Contextual Ads'); ?></label></th>
+        <td>
+          <?php if ($contextual == 1): ?>
+            <input type="checkbox" name="publisher_desk_contextual" value="1" checked="checked">
+          <?php else: ?>
+            <input type="checkbox" name="publisher_desk_contextual" value="1">
+          <?php endif; ?>
+          <?php _e('Insert contextual ads below posts'); ?>
+        </td>
+      </tr>
+    </table>
+    <?php submit_button(); ?>
   </form>
 </div>

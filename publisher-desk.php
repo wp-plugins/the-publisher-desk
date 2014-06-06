@@ -3,7 +3,7 @@
 Plugin Name: The Publisher Desk
 Plugin URI: http://code.publisherdesk.com/wordpress/plugins/the-publisher-desk
 Description: Allows for easy integration for any Publisher Desk customer using Wordpress.
-Version: 1.0.1
+Version: 1.0.2
 Author: The Publisher Desk
 Author URI: http://www.publisherdesk.com
 License: GPL2
@@ -98,7 +98,7 @@ function publisher_desk_settings() {
 }
 
 function publisher_desk_admin_menu() {
-  add_options_page('The Publisher Desk', 'The Publisher Desk', 1, 'publisher-desk.php', 'publisher_desk_settings');
+  add_menu_page('The Publisher Desk', 'The Publisher Desk', 'manage_options', __FILE__, 'publisher_desk_settings', plugins_url('favicon.png', __FILE__));
 }
 
 function publisher_desk_the_content($content) {

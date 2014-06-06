@@ -15,6 +15,8 @@ The Publisher Desk helps grow and monetize your audience without the intricacy a
 
 The Publisher Desk for Wordpress plugin seamlessly integrates the Publisher Desk JS library, targeting variables, and corresponding ad units to your exising Wordpress site.
 
+For more information about The Publisher Desk, please visit http://www.publisherdesk.com/
+
 == Installation ==
 
 1. Upload to the `/wp-content/plugins/` directory
@@ -44,6 +46,9 @@ All of our Javascript code executes asynchronously, as well as the code provided
 Visit http://www.publisherdesk.com to read more about the company and email us at info [at] publisherdesk [dot] com
 
 == Changelog ==
+
+= 1.0.2 =
+* Moving Settings menu location
 
 = 1.0.1 =
 * Added support for category and tag targeting
