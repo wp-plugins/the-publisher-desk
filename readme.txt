@@ -3,7 +3,7 @@ Contributors: thepublisherdesk
 Tags: Advertising, Monetization, Ads
 Requires at least: 3.0
 Tested up to: 3.9.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,9 @@ All of our Javascript code executes asynchronously, as well as the code provided
 Visit http://www.publisherdesk.com to read more about the company and email us at info [at] publisherdesk [dot] com
 
 == Changelog ==
+
+= 1.0.4 =
+* Bug Fix: Typo in variable name causing false positives
 
 = 1.0.3 =
 * Bug Fix: Check for valid tag and category arrays

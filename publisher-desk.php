@@ -3,7 +3,7 @@
 Plugin Name: The Publisher Desk
 Plugin URI: http://wordpress.org/plugins/the-publisher-desk/
 Description: Allows for easy integration for any Publisher Desk customer using Wordpress.
-Version: 1.0.3
+Version: 1.0.4
 Author: The Publisher Desk
 Author URI: http://www.publisherdesk.com
 License: GPL2
@@ -68,7 +68,7 @@ function publisher_desk_wp_head() {
 
       $cats = get_the_category($post->ID);
 
-      if (is_array($tags) && sizeof($cats) > 0) {
+      if (is_array($cats) && sizeof($cats) > 0) {
         $catsArray = array();
         foreach($cats as $cat) {
           $cat = get_category($cat);
