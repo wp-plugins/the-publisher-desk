@@ -3,7 +3,7 @@
 Plugin Name: The Publisher Desk
 Plugin URI: http://wordpress.org/plugins/the-publisher-desk/
 Description: Allows for easy integration for any Publisher Desk customer using Wordpress.
-Version: 1.0.6
+Version: 1.0.7
 Author: The Publisher Desk
 Author URI: http://www.publisherdesk.com
 License: GPL2
@@ -27,7 +27,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define ( 'PUBLISHER_DESK_VERSION', '1.0.6' );
+define ( 'PUBLISHER_DESK_VERSION', '1.0.7' );
 
 /**
  * Creates the Publisher Desk admin menu link in the sidebar
@@ -54,9 +54,9 @@ function publisher_desk_wp_head() {
 
     $id = get_option( 'publisher_desk_id' );
 
-    $output .= "<script>window.twoOhSixId = '$id';</script>\n";
-    $output .= "<script>window.twoOhSixVersion = '" . PUBLISHER_DESK_VERSION . "';</script>\n";
-    $output .= "<script>\n";
+    $output .= "<script data-cfasync=\"false\">\n";
+    $output .= "window.twoOhSixId = '$id';\n";
+    $output .= "window.twoOhSixVersion = '" . PUBLISHER_DESK_VERSION . "';\n";
     $output .= "window.twoOhSixCmd = window.twoOhSixCmd || [];\n";
     $output .= "window.twoOhSixCmd.push(function() {\n";
 
@@ -108,7 +108,7 @@ function publisher_desk_wp_head() {
     }
     $output .= "});\n";
     $output .= "</script>\n";
-    $output .= "<script src=\"//s.206ads.com/init.js\"></script>\n";
+    $output .= "<script data-cfasync=\"false\" src=\"//s.206ads.com/init.js\"></script>\n";
   }
   echo $output;
 }
