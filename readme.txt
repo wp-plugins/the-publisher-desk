@@ -47,6 +47,9 @@ Visit http://www.publisherdesk.com to read more about the company and email us a
 
 == Changelog ==
 
+= 1.0.7 =
+* Disabling Rocket Loader as this slows down ad execution
+
 = 1.0.6 =
 * Bug Fix: Closing open <script> tag
 
