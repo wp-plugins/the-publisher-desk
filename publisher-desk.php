@@ -3,7 +3,7 @@
 Plugin Name: The Publisher Desk
 Plugin URI: http://wordpress.org/plugins/the-publisher-desk/
 Description: Allows for easy integration for any Publisher Desk customer using Wordpress.
-Version: 1.0.9
+Version: 1.0.10
 Author: The Publisher Desk
 Author URI: http://www.publisherdesk.com
 License: GPL2
@@ -26,7 +26,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define ( 'PUBLISHER_DESK_VERSION', '1.0.9' );
+define ( 'PUBLISHER_DESK_VERSION', '1.0.10' );
 
 /**
  * Creates the Publisher Desk admin menu link in the sidebar
@@ -49,7 +49,15 @@ function publisher_desk_wp_head() {
 
   $output = '';
 
-  if ( get_option( 'publisher_desk_id' ) !== FALSE ) {
+  if ( get_option( 'publisher_desk_id' ) !== FALSE && get_option( 'publisher_desk_id' ) !== '' ) {
+
+    $output .= "<!-- The Publisher Desk -->\n";
+
+    if ( get_option( 'publisher_desk_bidder_id' ) !== FALSE && get_option( 'publisher_desk_bidder_id' ) !== '' ) {
+      $bidderId = get_option( 'publisher_desk_bidder_id' );
+      $output .= "<script data-cfasync=\"false\" src=\"//www.googletagservices.com/tag/js/gpt.js\"></script>\n";
+      $output .= "<script data-cfasync=\"false\" src=\"//ox-d.publisherdesk.servedbyopenx.com/w/1.0/jstag?nc=$bidderId\"></script>\n";
+    }
 
     $id = get_option( 'publisher_desk_id' );
 
@@ -108,6 +116,7 @@ function publisher_desk_wp_head() {
     $output .= "});\n";
     $output .= "</script>\n";
     $output .= "<script data-cfasync=\"false\" src=\"//s.206ads.com/init.js\"></script>\n";
+    $output .= "<!-- / The Publisher Desk -->\n";
   }
   echo $output;
 }

@@ -1,6 +1,8 @@
 <?php if ( $_POST['publisher_desk_hidden'] == 'yes' ): ?>
   <?php $id = $_POST['publisher_desk_id']; ?>
   <?php update_option( 'publisher_desk_id', $id ); ?>
+  <?php $bidderId = $_POST['publisher_desk_bidder_id']; ?>
+  <?php update_option( 'publisher_desk_bidder_id', $bidderId ); ?>
   <?php $contextual = $_POST['publisher_desk_contextual']; ?>
   <?php update_option( 'publisher_desk_contextual', $contextual ); ?>
   <?php $framebusters = $_POST['publisher_desk_framebusters']; ?>
@@ -8,6 +10,7 @@
   <div class="updated"><p><strong><?php _e( 'Settings updated.' ); ?></strong></p></div>
 <?php else: ?>
   <?php $id = get_option( 'publisher_desk_id' ); ?>
+  <?php $bidderId = get_option( 'publisher_desk_bidder_id' ); ?>
   <?php $contextual = get_option( 'publisher_desk_contextual' ); ?>
   <?php $framebusters = get_option( 'publisher_desk_framebusters' ); ?>
 <?php endif; ?>
@@ -21,6 +24,13 @@
         <th scope="row"><label><?php _e( 'Publisher ID' ); ?></label></th>
         <td>
           <input type="text" name="publisher_desk_id" value="<?php echo $id; ?>" size="50">
+          <p class="description">Your account manager will provide this value.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <th scope="row"><label><?php _e( 'Bidder ID (Optional)' ); ?></label></th>
+        <td>
+          <input type="text" name="publisher_desk_bidder_id" value="<?php echo $bidderId; ?>" size="50">
           <p class="description">Your account manager will provide this value.</p>
         </td>
       </tr>
