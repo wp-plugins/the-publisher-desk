@@ -3,7 +3,7 @@
 Plugin Name: The Publisher Desk
 Plugin URI: http://wordpress.org/plugins/the-publisher-desk/
 Description: Allows for easy integration for any Publisher Desk customer using Wordpress.
-Version: 1.0.10
+Version: 1.0.11
 Author: The Publisher Desk
 Author URI: http://www.publisherdesk.com
 License: GPL2
@@ -26,7 +26,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define ( 'PUBLISHER_DESK_VERSION', '1.0.10' );
+define ( 'PUBLISHER_DESK_VERSION', '1.0.11' );
 
 /**
  * Creates the Publisher Desk admin menu link in the sidebar
@@ -51,7 +51,7 @@ function publisher_desk_wp_head() {
 
   if ( get_option( 'publisher_desk_id' ) !== FALSE && get_option( 'publisher_desk_id' ) !== '' ) {
 
-    $output .= "<!-- The Publisher Desk -->\n";
+    $output .= "\n<!-- The Publisher Desk -->\n";
 
     if ( get_option( 'publisher_desk_bidder_id' ) !== FALSE && get_option( 'publisher_desk_bidder_id' ) !== '' ) {
       $bidderId = get_option( 'publisher_desk_bidder_id' );
@@ -145,6 +145,7 @@ function publisher_desk_init() {
   if ( $framebusters == 1 ) {
 
     $paths = array(
+      '/adcom/aceFIF.html',
       '/doubleclick/DARTIframe.html',
       '/eyeblaster/addineyeV2.html',
       '/jivox/jivoxIBuster.html',
