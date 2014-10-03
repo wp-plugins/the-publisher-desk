@@ -3,7 +3,7 @@ Contributors: thepublisherdesk
 Tags: Advertising, Monetization, Ads
 Requires at least: 3.0
 Tested up to: 3.9.1
-Stable tag: 1.0.10
+Stable tag: 1.0.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ Allows for easy integration for any Publisher Desk customer using Wordpress.
 
 The Publisher Desk helps grow and monetize your audience without the intricacy and cost of in-house development.
 
-The Publisher Desk for Wordpress plugin seamlessly integrates the Publisher Desk JS library, targeting variables, and corresponding ad units to your exising Wordpress site.
+The Publisher Desk for Wordpress plugin seamlessly integrates the Publisher Desk JS library, targeting variables, and iframe busters to your exising Wordpress site.
 
 For more information about The Publisher Desk, please visit http://www.publisherdesk.com/
 
@@ -21,13 +21,13 @@ For more information about The Publisher Desk, please visit http://www.publisher
 
 1. Upload to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Configure the plugin via the `Settings` menu
+1. Configure the plugin via the `The Publisher Desk` sidebar menu
 
 == Frequently Asked Questions ==
 
 = What does The Publisher Desk do? =
 
-The Publisher Desk helps you grow and monetize your audience without the heavy cost and deep complexities of in-house development. Our ad-supported model enables online content creators to take advantage of a comprehensive suite of sponsorship and advertising features. Our tools for ad insertions and built-in ad server and network integration enables you to be focused on developing rich and compelling content for your audience.
+The Publisher Desk helps you grow and monetize your audience without the heavy cost and deep complexities of in-house development. Our business model enables online content creators to take advantage of a comprehensive suite of sponsorship and advertising features. Our tools for ad insertions and built-in ad server and network integration enables you to be focused on developing rich and compelling content for your audience.
 
 = Do I need to be a customer of The Publisher Desk to use this plugin? =
 
@@ -46,6 +46,9 @@ All of our Javascript code executes asynchronously, as well as the code provided
 Visit http://www.publisherdesk.com to read more about the company and email us at info [at] publisherdesk [dot] com
 
 == Changelog ==
+
+= 1.0.11 =
+* Adding support for Ad.com Always On tags
 
 = 1.0.10 =
 * Adding support for OpenX
