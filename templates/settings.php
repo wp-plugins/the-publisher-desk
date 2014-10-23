@@ -1,19 +1,36 @@
 <?php if ( $_POST['publisher_desk_hidden'] == 'yes' ): ?>
+
   <?php $id = $_POST['publisher_desk_id']; ?>
   <?php update_option( 'publisher_desk_id', $id ); ?>
+
   <?php $bidderId = $_POST['publisher_desk_bidder_id']; ?>
   <?php update_option( 'publisher_desk_bidder_id', $bidderId ); ?>
+
   <?php $contextual = $_POST['publisher_desk_contextual']; ?>
   <?php update_option( 'publisher_desk_contextual', $contextual ); ?>
+
   <?php $framebusters = $_POST['publisher_desk_framebusters']; ?>
   <?php update_option( 'publisher_desk_framebusters', $framebusters ); ?>
+
+  <?php $attr = $_POST['publisher_desk_script_attributes']; ?>
+  <?php update_option( 'publisher_desk_script_attributes', $attr ); ?>
+
   <div class="updated"><p><strong><?php _e( 'Settings updated.' ); ?></strong></p></div>
+
 <?php else: ?>
+
   <?php $id = get_option( 'publisher_desk_id' ); ?>
+
   <?php $bidderId = get_option( 'publisher_desk_bidder_id' ); ?>
+
   <?php $contextual = get_option( 'publisher_desk_contextual' ); ?>
+
   <?php $framebusters = get_option( 'publisher_desk_framebusters' ); ?>
+
+  <?php $attr = get_option( 'publisher_desk_script_attributes' ); ?>
+
 <?php endif; ?>
+
 <div class="wrap">
   <?php screen_icon(); ?>
   <?php echo '<h2>' . __( 'The Publisher Desk', 'publisher_desk_dom' ) . '</h2>'; ?>
@@ -24,14 +41,14 @@
         <th scope="row"><label><?php _e( 'Publisher ID' ); ?></label></th>
         <td>
           <input type="text" name="publisher_desk_id" value="<?php echo $id; ?>" size="50">
-          <p class="description">Your account manager will provide this value.</p>
+          <p class="description"><?php _e( 'Your account manager will provide this value.' ); ?></p>
         </td>
       </tr>
       <tr valign="top">
         <th scope="row"><label><?php _e( 'Bidder ID (Optional)' ); ?></label></th>
         <td>
           <input type="text" name="publisher_desk_bidder_id" value="<?php echo $bidderId; ?>" size="50">
-          <p class="description">Your account manager will provide this value.</p>
+          <p class="description"><?php _e( 'Your account manager will provide this value.' ); ?></p>
         </td>
       </tr>
       <tr valign="top">
@@ -54,6 +71,14 @@
             <input type="checkbox" name="publisher_desk_contextual" value="1">
           <?php endif; ?>
           <?php _e( 'Insert contextual ads below posts' ); ?>
+        </td>
+      </tr>
+      <tr valign="top">
+        <th scope="row"><label><?php _e( 'Script Tag Attributes' ); ?></label></th>
+        <td>
+          <input type="text" name="publisher_desk_script_attributes" value="<?php echo $attr; ?>" size="50">
+          <p class="description"><?php _e( 'Append any additional attributes to our &lt;script&gt; tags.' ); ?></p>
+          <p class="description"><?php _e( 'Format: key1=value1&amp;key2=value2' ); ?></p>
         </td>
       </tr>
     </table>
