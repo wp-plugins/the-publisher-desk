@@ -3,7 +3,7 @@ Contributors: thepublisherdesk
 Tags: Advertising, Monetization, Ads
 Requires at least: 3.0
 Tested up to: 4.2.2
-Stable tag: 1.0.13
+Stable tag: 1.0.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,9 @@ All of our Javascript code executes asynchronously, as well as the code provided
 Visit http://www.publisherdesk.com to read more about the company and email us at info [at] publisherdesk [dot] com
 
 == Changelog ==
+
+= 1.0.14 =
+* Added promoted page template
 
 = 1.0.13 =
 * Added PulsePoint buster

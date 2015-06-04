@@ -3,7 +3,7 @@
 Plugin Name: The Publisher Desk
 Plugin URI: http://wordpress.org/plugins/the-publisher-desk/
 Description: Allows for easy integration for any Publisher Desk customer using Wordpress.
-Version: 1.0.13
+Version: 1.0.14
 Author: The Publisher Desk
 Author URI: http://www.publisherdesk.com
 License: GPL2
@@ -26,7 +26,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define ( 'PUBLISHER_DESK_VERSION', '1.0.13' );
+define ( 'PUBLISHER_DESK_VERSION', '1.0.14' );
 
 /**
  * Creates the Publisher Desk admin menu link in the sidebar
@@ -192,6 +192,41 @@ function publisher_desk_init() {
 }
 
 /**
+ * Creates promoted page on activation
+ */
+function publisher_desk_activation() {
+
+  $promoted_page = get_option( 'publisher_desk_promoted_page_id' );
+
+  if ( ! $promoted_page ) {
+    $page = array(
+      'post_type' => 'page',
+      'post_name' => 'promoted',
+      'post_title' => 'Promoted',
+      'post_content' => '<script type=\'text/javascript\' src=\'//cdn.connatix.com/min/connatix.renderer.destination.min.js\'></script>',
+      'post_status' => 'publish',
+      'comment_status' => 'closed',
+      'ping_status' => 'closed',
+    );
+    $post_id = wp_insert_post($page);
+    update_option( 'publisher_desk_promoted_page_id', $post_id );
+  }
+}
+
+/**
+ * Cleans up on deactivation
+ */
+function publisher_desk_deactivation() {
+
+  $promoted_page = get_option( 'publisher_desk_promoted_page_id' );
+
+  wp_delete_post( $promoted_page, true );
+
+  delete_option( 'publisher_desk_promoted_page_id' );
+
+}
+
+/**
  * Wordpress action hooks
  */
 add_action( 'admin_menu', 'publisher_desk_admin_menu' );
@@ -202,3 +237,9 @@ add_action( 'wp_head', 'publisher_desk_wp_head' );
  * Wordpress filter hooks
  */
 add_filter( 'the_content', 'publisher_desk_the_content' );
+
+/**
+ * Wordpress activation hooks
+ */
+register_activation_hook( __FILE__, 'publisher_desk_activation' );
+register_deactivation_hook( __FILE__, 'publisher_desk_deactivation' );
